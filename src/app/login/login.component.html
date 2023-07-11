@@ -1,0 +1,62 @@
+
+<div class="abc">
+    <h1>Registration Form</h1>
+<form [formGroup]="loginForm">
+      <mat-form-field class="example-full-width">
+        <mat-label>First Name</mat-label>
+        <input matInput formControlName="firstName" />
+      </mat-form-field>
+      <mat-error
+        *ngIf="firstName?.errors?.['required'] &&(firstName?.touched||firstName?.dirty)"
+        >First Name is Required</mat-error
+      >
+    <mat-form-field class="example-full-width">
+      <mat-label> Guest Name</mat-label>
+      <input matInput formControlName="lastName" />
+    </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Email</mat-label>
+    <input matInput formControlName="email" />
+  </mat-form-field>
+  <mat-error
+    *ngIf="email?.errors?.['required'] &&(email?.touched||email?.dirty)"
+    >Email is required</mat-error
+  >
+  <mat-error *ngIf="email?.errors?.['email'] ">Enter a valid email</mat-error>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Phone Number</mat-label>
+    <input matInput formControlName="phoneNumber" />
+  </mat-form-field>
+  <mat-error
+    *ngIf="phoneNumber?.errors?.['required']&&(phoneNumber?.touched||phoneNumber?.dirty) "
+    >phone number is required</mat-error
+  >
+  <mat-form-field class="example-full-width">
+    <mat-label>Enter your password</mat-label>
+    <input
+      matInput
+      [type]="hide ? 'password' : 'text'"
+      formControlName="password"
+    />
+    <button
+      mat-icon-button
+      matSuffix
+      (click)="hide = !hide"
+      [attr.aria-label]="'Hide password'"
+      [attr.aria-pressed]="hide"
+    >
+      <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+    </button>
+  </mat-form-field>
+  <mat-error
+    *ngIf="password?.errors?.['required'] &&(password?.touched||password?.dirty)"
+    >password is required</mat-error
+  >
+  <mat-error *ngIf="password?.errors?.['minlength'] "
+    >password must be 8 character long</mat-error
+  >
+</form>
+<button mat-raised-button color="primary">Submit</button>
+</div>
