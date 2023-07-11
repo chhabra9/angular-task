@@ -28,9 +28,6 @@
     display: flex;
     align-items: flex-start;
   }
-  .temp{
-    margin-right: 10px;
-  }
 .abc{
     margin-top: 10%;
     display: flex;
@@ -38,4 +35,7 @@
     align-items: center;
     flex-direction: column;
 
+}
+.name{
+  margin-right: 3px;
 }

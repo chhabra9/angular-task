@@ -2,7 +2,9 @@
 <div class="abc">
     <h1>Registration Form</h1>
 <form [formGroup]="loginForm">
-      <mat-form-field class="example-full-width">
+  <div class="example-form-fields">
+    <div class="name">
+      <mat-form-field >
         <mat-label>First Name</mat-label>
         <input matInput formControlName="firstName" />
       </mat-form-field>
@@ -10,11 +12,14 @@
         *ngIf="firstName?.errors?.['required'] &&(firstName?.touched||firstName?.dirty)"
         >First Name is Required</mat-error
       >
-    <mat-form-field class="example-full-width">
-      <mat-label> Guest Name</mat-label>
+      </div>
+    <div>
+    <mat-form-field>
+      <mat-label> Last Name</mat-label>
       <input matInput formControlName="lastName" />
     </mat-form-field>
-
+  </div>
+</div>
   <mat-form-field class="example-full-width">
     <mat-label>Email</mat-label>
     <input matInput formControlName="email" />
